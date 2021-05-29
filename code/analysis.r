@@ -3,6 +3,7 @@
 
 library(dplyr) 
 library(rpart) # Decision Tree
+install.packages("rpart.plot")
 library(rpart.plot) # Decision Tree
 
 # ---Import Data---
@@ -24,12 +25,13 @@ test.df <- data.df[-train.index, ]
 # ---Build Decision Tree Model---
 
 ## Build Decision Tree Model
+set.seed(5)
 cart.model<- rpart(Survived ~. , 
                    data=train.df)
 cart.model
 
 ## Plot the Decision Tree and Save the image
-png("../output/decision_tree.png")
+png("../results/decision_tree.png")
 prp(cart.model,         # 模型
     faclen=0,           # 呈現的變數不要縮寫
     fallen.leaves=TRUE, # 讓樹枝以垂直方式呈現
@@ -37,12 +39,12 @@ prp(cart.model,         # 模型
 dev.off()
 
 ## Predict on Test Dataset
+set.seed(5)
 pred <- predict(cart.model, newdata=test.df, type ="class")
 confusion_matrix <- table(real=test.df$Survived, predict=pred)
-confusion_matrix
+print(confusion_matrix)
 accuracy <- (confusion_matrix[1,1]+confusion_matrix[2,2])/nrow(test.df)
-accuracy # 0.787
-
+print(accuracy)
 
 
 
