@@ -28,11 +28,13 @@ cart.model<- rpart(Survived ~. ,
                    data=train.df)
 cart.model
 
-## Plot the Decision Tree
+## Plot the Decision Tree and Save the image
+png("../output/decision_tree.png")
 prp(cart.model,         # 模型
     faclen=0,           # 呈現的變數不要縮寫
     fallen.leaves=TRUE, # 讓樹枝以垂直方式呈現
     shadow.col="gray", extra =4,main="Decision Tree")
+dev.off()
 
 ## Predict on Test Dataset
 pred <- predict(cart.model, newdata=test.df, type ="class")
@@ -40,7 +42,6 @@ confusion_matrix <- table(real=test.df$Survived, predict=pred)
 confusion_matrix
 accuracy <- (confusion_matrix[1,1]+confusion_matrix[2,2])/nrow(test.df)
 accuracy # 0.787
-
 
 
 
