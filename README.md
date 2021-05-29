@@ -8,6 +8,10 @@ Tha data is retrieved from the open Kaggle dataset - Titanic
 
 ---
 
+### Manage Computational Research
+
+- Create data, code, and result repo. | Don't put them all together !
+- Name your variables properly.
 
 ---
 
@@ -17,6 +21,4 @@ Tha data is retrieved from the open Kaggle dataset - Titanic
 2. Create a capsule in CodeOcean and copy the link of the open repo on github.
 3. Setting Environment using Docker in CodeOcean.
 4. Click on the Reproducible Run. Finished !
-
----
 
