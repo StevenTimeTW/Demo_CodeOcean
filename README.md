@@ -8,7 +8,7 @@ Tha data is retrieved from the open Kaggle dataset - Titanic
 
 ---
 
-### Manage Computational Research
+### Manage Computational Research | Baby-Step
 
 - Create data, code, and result repo. | Don't put them all together !
 - Name your variables properly
