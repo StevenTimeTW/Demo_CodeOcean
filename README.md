@@ -11,7 +11,8 @@ Tha data is retrieved from the open Kaggle dataset - Titanic
 ### Manage Computational Research
 
 - Create data, code, and result repo. | Don't put them all together !
-- Name your variables properly.
+- Name your variables properly
+- Add description on your data, metadata, and methods.
 
 ---
 
